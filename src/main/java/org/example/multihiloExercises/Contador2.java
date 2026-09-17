@@ -31,6 +31,7 @@ public class Contador2 implements Runnable{
 
     public static void main(String[] args) throws InterruptedException {
         Random random1=new Random();
+
         Thread hilo=new Thread(new Contador2("Contador-1", 5, random1));
         Thread hilo2=new Thread(new Contador2("Contador-2", 5, random1));
         Thread hilo3=new Thread(new Contador2("Contador-3", 5, random1));
