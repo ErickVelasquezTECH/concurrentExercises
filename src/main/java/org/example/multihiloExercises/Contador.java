@@ -28,6 +28,7 @@ public class Contador implements Runnable{
                 throw new RuntimeException(e);
             }
         }
+        System.out.println("Hola soy Erick");
     }
 
     public static void main(String[] args) throws InterruptedException {
