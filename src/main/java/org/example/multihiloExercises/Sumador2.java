@@ -54,7 +54,7 @@ class Sumador2 implements Runnable {
 
         int total = sumador1.getSuma() + sumador2.getSuma() + sumador3.getSuma() + sumador4.getSuma();
 
-        System.out.println("Total: " + total);
+        System.out.printf("Total: %d%n",total);
     }
 
 }

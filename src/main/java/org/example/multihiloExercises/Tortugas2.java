@@ -31,8 +31,9 @@ public class Tortugas2 implements Runnable {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService pool = Executors.newFixedThreadPool(5);
 
+        Random random = new Random();
         for (int i = 1; i <= 5; i++) {
-            pool.submit(new Tortugas(("Tortuga-" + i), new Random()));
+            pool.submit(new Tortugas(("Tortuga-" + i), random));
         }
 
         pool.shutdown();

@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class Cuenta2 implements Runnable{
+public class Cuenta2 implements Runnable {
     private int saldo = 0;
 
     public void ingresar(int cantidad) {
@@ -14,9 +14,10 @@ public class Cuenta2 implements Runnable{
     public int getSaldo() {
         return saldo;
     }
+
     @Override
     public void run() {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100000; i++) {
             ingresar(1);
         }
     }
