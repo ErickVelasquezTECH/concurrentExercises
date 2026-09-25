@@ -8,11 +8,11 @@ public class Ejercicio6 {
     static Semaphore semaphore = new Semaphore(0);
 
     public static void main(String[] args) throws InterruptedException {
-
         Thread.sleep(3000);
         semaphore.release();
         semaphore.release();
         semaphore.release();
+
         try (ExecutorService pool = Executors.newFixedThreadPool(3)) {
             pool.submit(
                     () -> {
