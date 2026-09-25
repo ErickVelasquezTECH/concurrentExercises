@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 
 public class Sala {
 
-    public synchronized void entrar(String nombre) throws InterruptedException {
+    public void entrar(String nombre) throws InterruptedException {
         System.out.println(nombre + " ENTRA");
         Thread.sleep(1000);              // simula trabajo dentro de la sección crítica
         System.out.println(nombre + " SALE");
@@ -14,6 +14,7 @@ public class Sala {
 
     public static void main(String[] args) throws InterruptedException {
         Sala salaInformatica = new Sala();
+
 
         Thread hilo1 = new Thread(() -> {
             try {
