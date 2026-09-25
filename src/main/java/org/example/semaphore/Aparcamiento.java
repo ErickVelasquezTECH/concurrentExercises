@@ -20,39 +20,20 @@ public class Aparcamiento {
             System.out.println("   Coche " + coche + " se va");
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } finally {
+        }finally {
             semaphore.release();
         }
     }
 
     public static void main(String[] args) throws InterruptedException {
         Aparcamiento aparcamiento = new Aparcamiento();
-
-        try (ExecutorService pool = Executors.newFixedThreadPool(8)) {
-            pool.submit(() -> {
-                aparcamiento.aparcar(1);
-            });
-            pool.submit(() -> {
-                aparcamiento.aparcar(2);
-            });
-            pool.submit(() -> {
-                aparcamiento.aparcar(3);
-            });
-            pool.submit(() -> {
-                aparcamiento.aparcar(4);
-            });
-            pool.submit(() -> {
-                aparcamiento.aparcar(5);
-            });
-            pool.submit(() -> {
-                aparcamiento.aparcar(6);
-            });
-            pool.submit(() -> {
-                aparcamiento.aparcar(7);
-            });
-            pool.submit(() -> {
-                aparcamiento.aparcar(8);
-            });
+        try (ExecutorService pool = Executors.newFixedThreadPool(3)) {
+            for (int i = 1; i <=8 ; i++) {
+                final int number=i;
+                pool.submit(() -> {
+                    aparcamiento.aparcar(number);
+                });
+            }
         }
     }
 }
