@@ -1,6 +1,6 @@
 package org.example.multihiloExercises;
 
-public class Cuenta implements Runnable {
+public class Cuenta55 implements Runnable {
     private int saldo = 0;
 
     public void ingresar(int cantidad) {
@@ -30,7 +30,7 @@ public class Cuenta implements Runnable {
 
 
     public static void main(String[] args) throws InterruptedException {
-        Cuenta cuenta = new Cuenta();
+        Cuenta55 cuenta = new Cuenta55();
 
         Thread hilo1 = new Thread(cuenta);
         Thread hilo2 = new Thread(cuenta);
